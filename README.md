@@ -4,7 +4,7 @@
 
 Interfaz de usuario desarrollada con **Next.js 15** que consume el API Gateway (BFF) para listar y guardar personajes favoritos de Rick & Morty. Implementa manejo explícito de estados de UI: `loading`, `success`, `error` y `conflict` (duplicados).
 
-## 🏛 Rol en la Arquitectura SOA
+##  Rol en la Arquitectura SOA
 
 ```
 Usuario → [Frontend] → API Gateway / BFF → Persistence Microservice → PostgreSQL
@@ -12,14 +12,14 @@ Usuario → [Frontend] → API Gateway / BFF → Persistence Microservice → Po
 
 Este servicio **no se comunica directamente** con la base de datos ni con el microservicio de persistencia. Toda petición pasa por el BFF.
 
-## 🛠 Tecnologías
+##  Tecnologías
 
 - Next.js 15 (App Router)
 - React 19
 - TypeScript
 - Tailwind CSS
 
-## 🚀 Levantar en local
+## Levantar en local
 
 ```bash
 # 1. Instalar dependencias
@@ -35,6 +35,6 @@ npm run dev
 
 El servidor arranca en `http://localhost:3000` (o el puerto que configure Nginx).
 
-## ☁️ Producción
+##  Producción
 
 Desplegado en **Vercel** con la variable `NEXT_PUBLIC_BFF_URL` apuntando al BFF en Render.
