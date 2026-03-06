@@ -60,6 +60,14 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
                         </button>
                     </div>
                 );
+            case 'conflict':
+                return (
+                    <button
+                        className="w-full flex justify-center mt-4 py-2 px-4 rounded-lg bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold cursor-default transition-colors duration-200"
+                    >
+                        ⚠️ Ya está en favoritos
+                    </button>
+                );
             default:
                 return (
                     <button

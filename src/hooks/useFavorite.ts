@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-type SaveState = 'idle' | 'saving' | 'saved' | 'error';
+type SaveState = 'idle' | 'saving' | 'saved' | 'error' | 'conflict';
 
 interface UseFavoriteResult {
     state: SaveState;
@@ -25,7 +25,9 @@ export const useFavorite = (): UseFavoriteResult => {
             });
 
             if (response.status === 409) {
-                throw new Error('¡Este personaje ya está en favoritos!');
+                setState('conflict');
+                setTimeout(() => setState('idle'), 4000);
+                return;
             }
             if (!response.ok) {
                 throw new Error(`Error al guardar. Código: ${response.status}`);
